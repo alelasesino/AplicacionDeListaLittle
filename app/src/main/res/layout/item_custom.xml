@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/textAppearanceLarge"
+        android:text="Detalles del producto"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
+        android:textSize="26sp"
+        android:textColor="#BA000000"
+        android:textIsSelectable="true"
+        tools:context=".ui.fragment.ItemDetailFragment"/>
+
+    <EditText
+        android:id="@+id/txt_details"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/textAppearanceLarge"
+        android:hint="Descripcion del producto"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp"
+        android:textColor="#6D000000"
+        android:background="@android:color/transparent"
+        tools:context=".ui.fragment.ItemDetailFragment"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/textAppearanceLarge"
+        android:text="Tags"
+        android:padding="16dp"
+        android:textSize="26sp"
+        android:textColor="#BA000000"
+        android:textIsSelectable="true"
+        tools:context=".ui.fragment.ItemDetailFragment"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="10dp">
+
+            <EditText
+                android:id="@+id/txt_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Escribir tag..."/>
+
+            <Button
+                android:id="@+id/bt_add_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Añadir tag"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/tag_label_background"
+                style="?android:attr/borderlessButtonStyle"/>
+
+        </LinearLayout>
+
+        <include layout="@layout/recycler_tag"/>
+
+    </LinearLayout>
+
+</LinearLayout>
