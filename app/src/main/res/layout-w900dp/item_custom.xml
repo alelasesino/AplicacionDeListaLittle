@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="30dp"
+    android:orientation="vertical">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_product">
+
+        <EditText
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:hint="Name product"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="15dp"
+            android:layout_marginStart="25dp"
+            android:elevation="1dp"
+            android:textSize="55sp"
+            android:textColor="#000000"
+            android:textColorHint="#94000000"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/insanibu"/>
+
+        <ImageView
+            android:id="@+id/custom_image_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/burger"
+            android:layout_gravity="center_horizontal|center_vertical"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin">
+
+            <EditText
+                android:id="@+id/txt_price"
+                style="@style/PriceTextView"
+                android:hint="0,00 €"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:maxLines="1"
+                app:layout_anchor="@id/fab_save_item"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/fab_margin"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_save_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_save_white" />
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/textAppearanceLarge"
+        android:text="Detalles del producto"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
+        android:textSize="26sp"
+        android:textColor="#BA000000"
+        android:textIsSelectable="true"
+        tools:context=".ui.fragment.ItemCustomFragment"/>
+
+    <EditText
+        android:id="@+id/txt_details"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/textAppearanceLarge"
+        android:hint="Descripcion del producto"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp"
+        android:textColor="#6D000000"
+        android:background="@android:color/transparent"
+        tools:context=".ui.fragment.ItemCustomFragment"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/textAppearanceLarge"
+        android:text="Tags"
+        android:padding="16dp"
+        android:textSize="26sp"
+        android:textColor="#BA000000"
+        android:textIsSelectable="true"
+        tools:context=".ui.fragment.ItemCustomFragment"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="10dp">
+
+            <EditText
+                android:id="@+id/txt_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Escribir tag..."/>
+
+            <Button
+                android:id="@+id/bt_add_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Añadir tag"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/tag_label_background"
+                style="?android:attr/borderlessButtonStyle"/>
+
+        </LinearLayout>
+
+        <include layout="@layout/recycler_tag"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</ScrollView>
